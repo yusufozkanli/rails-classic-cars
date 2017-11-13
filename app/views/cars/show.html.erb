@@ -1,2 +1,17 @@
 <h1>Cars#show</h1>
 <p>Find me in app/views/cars/show.html.erb</p>
+
+<%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %>
+
+<ul>
+  <li> Brand: <%= @car.brand %></li>
+  <li> Model: <%= @car.model %></li>
+  <li> Year: <%= @car.year %></li>
+  <li> Price: <%= @car.price %></li>
+  <li> Description: <%= @car.description %></li>
+</ul>
+
+
+<%= link_to "All Cars", root_path, class: "btn btn-primary" %>
+
+<%= link_to "Book", root_path, class: "btn btn-warning"%>
