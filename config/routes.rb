@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :cars
+  resources :cars do
+    resources :rentals, only: [ :new, :create ]
+  end
+
+  resources :users, only: [ :show ]
+
   devise_for :users
 
   root to: 'cars#index'

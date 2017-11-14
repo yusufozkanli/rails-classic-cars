@@ -11,6 +11,7 @@
   <li> Description: <%= @car.description %></li>
 </ul>
 
+<%= link_to "Book This Car", new_car_rental_path(@car), class: "btn btn-primary" %>
 
 <%= link_to "All Cars", root_path, class: "btn btn-primary" %>
 
