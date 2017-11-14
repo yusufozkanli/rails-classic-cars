@@ -1,20 +1,18 @@
-<h1>Add a new car</h1>
-<p>Find me in app/views/cars/new.html.erb</p>
-
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-  <%= simple_form_for [@car] do |f| %>
-    <%= f.input :brand %>
-    <%= f.input :model %>
-    <%= f.input :year %>
-    <%= f.input :color %>
-    <%= f.input :price %>
-    <%= f.input :description %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Add a car", class: "btn btn-primary" %>
-  <% end %>
-   </div>
+    <div class="col-xs-6 col-xs-offset-3 text-center">
+      <h1>Add a new car</h1>
+      <%= simple_form_for [@car] do |f| %>
+        <%= f.input :brand %>
+        <%= f.input :model %>
+        <%= f.input :year %>
+        <%= f.input :color %>
+        <%= f.input :price %>
+        <%= f.input :description %>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "Add a car", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
