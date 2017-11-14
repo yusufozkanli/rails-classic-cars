@@ -1,0 +1,64 @@
+/*.car-show-container {
+  width: 100%;
+}*/
+
+.col-xs-offset-2 {
+  margin-left: 16.6666666667%;
+  margin-right: 16.6666666667%;
+}
+
+.container-double {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.carte-text {
+  background-color: white;
+  padding: 10px;
+  width: 50%;
+  height: 20vw;
+}
+
+.carte-img {
+  width: 50%;
+  height: 20vw;
+}
+
+.img-in-cart {
+  width: 100%;
+  height: 100%;
+}
+
+.container-bigdouble {
+  margin-top: 70px;
+}
+
+.list-sans-dec {
+  list-style-type: none;
+  padding: 15px;
+
+}
+
+.img-show {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: rgb(220, 220, 220);
+  transition: background 0.3s ease;
+}
+
+.btn-treehouse:hover {
+  opacity: 1;
+  background: rgb(200, 200, 200);
+  text-decoration: none;
+  color: white;
+}
+
