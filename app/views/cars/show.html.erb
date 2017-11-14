@@ -14,11 +14,11 @@
           <li> Year: <%= @car.year %></li>
           <li> Price: <%= @car.price %></li>
           <li> Description: <%= @car.description %></li>
+          <%= link_to "All Cars", root_path, class: "btn btn-danger" %>
+          <%= link_to "Book This Car", new_car_rental_path(@car), class: "btn btn-danger" %>
         </ul>
       </div>
     </div>
-      <%= link_to "All Cars", root_path, class: "btn-treehouse" %>
-      <%= link_to "Book This Car", new_car_rental_path(@car), class: "btn btn-primary" %>
   </div>
 </div>
 

@@ -22,6 +22,11 @@
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  border: 1px solid black;
+}
+
+.navbar-wagon .avatar:hover {
+  border: 1px solid red;
 }
 
 /* Right section */
@@ -39,24 +44,27 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: orange;
-  font-size: 14px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: red;
   text-decoration: none;
 }
 
 /* Dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  box-shadow: 1px 1px 4px #000000;
+  border-color: #000000;
+  background-image: linear-gradient(to bottom, #2E2E2E 0%, #3d3d3d 60%);
 }
+
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: orange !important;
+  color: red !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;

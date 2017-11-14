@@ -4,14 +4,14 @@
     <%= image_tag("logo.png", :alt => "Vavavoom Logo") %>
   </a>
 
-  <input class="myInp" type="text" name="search" placeholder="Search..">
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <%= link_to "Sign In", new_user_session_path(current_user)%>
+    <%= link_to "All Cars", root_path(:anchor => "container2"), class: "navbar-wagon-item navbar-wagon-link"%>
+
+    <% if current_user == nil %>
+      <%= link_to "Sign In", new_user_session_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
+    <% end %>
 
     <!-- Profile picture with dropdown list -->
     <% if current_user != nil %>

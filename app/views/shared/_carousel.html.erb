@@ -13,10 +13,10 @@
     <div class="item active">
       <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%), url('https://www.experiencedays.co.uk/images/Driving-Experience-in-Oxfordshire-Edited-28-of-32-1920x1080-resize.jpg');">
         <div class="banner-content text-center">
-          <h1>Vavavoom..</h1>
-          <p>Best classic cars for hire</p>
+          <h1>Vavavoom.</h1>
+          <h2>Best classic cars for hire</h2>
           <% if current_user == nil %>
-            <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-primary"%>
+            <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-danger"%>
           <% else %>
             <%= link_to "Add a new car", new_car_path, class: "btn btn-danger"%>
           <% end %>
@@ -25,12 +25,12 @@
     </div>
 
     <div class="item">
-      <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%), url('https://media.wired.com/photos/59266cf87034dc5f91beb600/master/w_2400,c_limit/1954-Mercedes-Benz-300-SL-Gullwing_Darin-Schnabel-c-2016-Courtesy-RM-Sothebys.jpg');">
+      <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%), url('https://media.wired.com/photos/59266cf87034dc5f91beb600/master/w_2400,c_limit/1954-Mercedes-Benz-300-SL-Gullwing_Darin-Schnabel-c-2016-Courtesy-RM-Sothebys.jpg');">
         <div class="banner-content text-center">
-          <h1>Vavavoom..</h1>
-          <p>Best classic cars for hire</p>
+          <h1>Vavavoom.</h1>
+          <h2>Best classic cars for hire</h2>
           <% if current_user == nil %>
-            <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-primary"%>
+            <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-dangersh"%>
           <% else %>
             <%= link_to "Add a new car", new_car_path, class: "btn btn-danger"%>
           <% end %>
