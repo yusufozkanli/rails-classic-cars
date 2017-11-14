@@ -2,6 +2,8 @@
   <div class="banner-content text-center">
     <h1>Vavavoom..</h1>
     <p>Best classic cars for hire</p>
-    <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-primary"%>
+    <% if current_user == nil %>
+      <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-primary"%>
+    <% end %>
   </div>
 </div>
