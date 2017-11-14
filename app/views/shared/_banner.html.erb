@@ -4,6 +4,8 @@
     <p>Best classic cars for hire</p>
     <% if current_user == nil %>
       <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-primary"%>
+    <% else %>
+      <%= link_to "Add a new car", new_car_path, class: "btn btn-danger"%>
     <% end %>
   </div>
 </div>
