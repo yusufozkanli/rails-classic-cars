@@ -1,17 +1,27 @@
-<h1>Cars#show</h1>
-<p>Find me in app/views/cars/show.html.erb</p>
 
-<%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %>
+<div class="container-bigdouble">
+  <div class="col-xs-8 col-xs-offset-2">
+    <div class="container-double">
+      <div class="carte-img">
+        <%= cl_image_tag @car.photo, class: "img-show", crop: :fill %>
+      </div>
 
-<ul>
-  <li> Brand: <%= @car.brand %></li>
-  <li> Model: <%= @car.model %></li>
-  <li> Year: <%= @car.year %></li>
-  <li> Price: <%= @car.price %></li>
-  <li> Description: <%= @car.description %></li>
-</ul>
+      <div class="carte-text">
+        <h3><%= @car.brand %> <%= @car.model %> <%= @car.year %> </h3>
+        <ul class="list-sans-dec">
+          <li> Brand: <%= @car.brand %></li>
+          <li> Model: <%= @car.model %></li>
+          <li> Year: <%= @car.year %></li>
+          <li> Price: <%= @car.price %></li>
+          <li> Description: <%= @car.description %></li>
+        </ul>
+      </div>
+    </div>
+      <%= link_to "All Cars", root_path, class: "btn-treehouse" %>
+      <%= link_to "Book", root_path, class: "btn-treehouse"%>
+  </div>
+</div>
 
 
-<%= link_to "All Cars", root_path, class: "btn btn-primary" %>
 
-<%= link_to "Book", root_path, class: "btn btn-warning"%>
+
