@@ -1,11 +1,6 @@
 <div class="container">
   <%= render 'shared/banner' %>
-
-  <% @cars.each do |c| %>
-  <p> <%= c.brand %> </p>
-  <p> <%= c.model %> </p>
-  <% end %>
-
+  <%= render 'shared/card' %>
   <%= link_to "Add a new car", new_car_path %>
 </div>
 
