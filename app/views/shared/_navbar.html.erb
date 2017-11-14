@@ -4,12 +4,13 @@
     <h2>Vavavoom</h2>
   </a>
 
+  <input class="myInp" type="text" name="search" placeholder="Search..">
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <%= link_to "Sign In", new_user_session_path(current_user)%>
+    <a href="" class="navbar-wagon-item navbar-wagon-link">Cars</a>
+    <%= link_to "Sign In", new_user_session_path(current_user), class: "sign-in" %>
 
     <!-- Profile picture with dropdown list -->
     <% if current_user != nil %>

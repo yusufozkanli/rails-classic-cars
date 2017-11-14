@@ -1,14 +1,14 @@
 /* Main navbar */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background-image: linear-gradient(to bottom, #000000 0%, #1a1a1a 60%);
+  background-image: linear-gradient(to bottom, #2E2E2E 0%, #1a1a1a 60%);
   transition: all 0.3s ease;
   height: 90px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: orange;
+  color: #2E2E2E;
   text-decoration: none;
 }
 
@@ -39,7 +39,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: orange;
+  color: red;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -76,4 +76,31 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+h2 {
+  color: red;
+  position: relative;
+  bottom: 10px;
+}
+
+.sign-in {
+  color: red;
+  font-size: 14px
+}
+
+.myInp {
+  width: 150px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width .4s ease-in-out;
+  transition: width .4s ease-in-out;
+}
+
+.myInp:focus {
+  width: 60%;
 }
