@@ -31,12 +31,20 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.update(car_params)
     redirect_to car_path(@car)
+    
+  def map
+    @cars = Car.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@cars) do |car, marker|
+      marker.lat car.latitude
+      marker.lng car.longitude
+    end
   end
 
   private
 
   def car_params
-  params.require(:car).permit(:brand, :model, :year, :color, :price, :description, :photo, :photo_cache)
+  params.require(:car).permit(:brand, :model, :year, :color, :price, :description, :address, :photo, :photo_cache)
   end
 
 
