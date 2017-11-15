@@ -16,7 +16,7 @@
           <h1>Vavavoom.</h1>
           <h2>Best classic cars for hire</h2>
             <div class="search-button">
-            <%= form_tag(cars_path, method: :get, id: "demo-2") do %>
+            <%= form_tag(cars_search_path, method: :get, id: "demo-2") do %>
               <%= search_field_tag :query %>
               <%# submit_tag 'Search' %>
             <% end %>
@@ -31,7 +31,7 @@
           <h1>Vavavoom.</h1>
           <h2>Best classic cars for hire</h2>
           <div class="search-button">
-            <%= form_tag(cars_path, method: :get, id: "demo-2") do %>
+            <%= form_tag(cars_search_path, method: :get, id: "demo-2") do %>
               <%= search_field_tag :query %>
               <%# submit_tag 'Search' %>
             <% end %>

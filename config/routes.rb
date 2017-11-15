@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get '/cars/map', to: 'cars#map'
+  get '/cars/search', to: 'cars#search'
   resources :cars do
     resources :rentals, only: [ :new, :create ]
   end
