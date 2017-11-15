@@ -2,7 +2,10 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @cars = Car.all
+    @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+    if @cars.empty?
+      @cars = Car.all
+    end
   end
 
   def show
