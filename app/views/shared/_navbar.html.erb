@@ -4,13 +4,20 @@
     <%= image_tag("logo.png", :alt => "Vavavoom Logo") %>
   </a>
 
+  <!--  Search Button -->
+
+
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= link_to "All Cars", root_path(:anchor => "container2"), class: "navbar-wagon-item navbar-wagon-link"%>
 
     <% if current_user == nil %>
+      <%= link_to "Sign Up", new_user_registration_path(current_user), class: "btn btn-danger"%>
       <%= link_to "Sign In", new_user_session_path(current_user), class: "navbar-wagon-item navbar-wagon-link"%>
+    <% else %>
+      <%= link_to "Add a new car", new_car_path, class: "btn btn-danger"%>
     <% end %>
 
     <!-- Profile picture with dropdown list -->
@@ -27,3 +34,4 @@
     <% end  %>
  </div>
 </div>
+
