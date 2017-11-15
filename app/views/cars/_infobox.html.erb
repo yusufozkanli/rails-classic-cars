@@ -1,0 +1,14 @@
+<div class="infobox">
+  <div class="infobox_content">
+    <div class="infobox_content_left">
+      <h6><%= link_to car.brand, car_path(car) %></h6>
+      <h7><%= link_to car.model, car_path(car) %></h7>
+    </div>
+    <div class="infobox_content_right">
+      <h6> £ <%= car.price %>/day</h6>
+    </div>
+  </div>
+  <div class="infobox_image">
+  <%= cl_image_tag car.photo, class: "small-img" %>
+  </div>
+</div>
