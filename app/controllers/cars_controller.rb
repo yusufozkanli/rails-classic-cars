@@ -2,10 +2,7 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
-    if @cars.empty?
-      @cars = Car.all
-    end
+    @cars = Car.last(6)
   end
 
   def show
@@ -34,6 +31,13 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.update(car_params)
     redirect_to car_path(@car)
+  end
+
+  def search
+    @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+    if @cars.empty?
+      @cars = "No results found"
+    end
   end
 
   def map
