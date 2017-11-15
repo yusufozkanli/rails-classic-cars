@@ -33,6 +33,11 @@ class CarsController < ApplicationController
     redirect_to car_path(@car)
   end
 
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to cars_path
+    
   def search
     @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
     if @cars.empty?

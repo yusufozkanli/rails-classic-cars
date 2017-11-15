@@ -17,6 +17,7 @@
           <%= link_to "All Cars", root_path, class: "btn btn-danger" %>
           <%= link_to "Book This Car", new_car_rental_path(@car), class: "btn btn-danger" %>
           <%= link_to "Edit", edit_car_path(@car), class: "btn btn-danger" %>
+          <%= link_to "Delete", car_path(@car), class: "btn btn-danger", method: :delete%>
         </ul>
       </div>
     </div>
