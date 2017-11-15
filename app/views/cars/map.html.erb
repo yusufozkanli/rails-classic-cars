@@ -1,5 +1,5 @@
 
-<h1 class="text-center"> Search for Vavavoom cars</h1>
+<h1 class="text-center"> Search for Vavavoom cars in a map</h1>
 
 <div class="container">
   <div class="row">
@@ -19,7 +19,15 @@
             } else if (markers.length == 1) {
               handler.getMap().setZoom(14);
             }
+            var contentString = '<div>test</div>';
+            var infowindow = new google.maps.InfoWindow({
+            content: contentString
+            });
+            markers.addListener('click', function() {
+            infowindow.open(map, marker);
+            });
           });
+
         <% end %>
       <% end %>
 

@@ -3,13 +3,17 @@
     <% @cars.each do |c| %>
       <div class="col-xs-12 col-sm-4">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path c.photo, height: 300, width: 400, crop: :fill %>')">
-          <div class="card-description">
-            <h2> <%= c.brand %> </h2>
-            <p> <%= c.model %> </p>
-          </div>
-          <img class="card-user" src=<%="https://kitt.lewagon.com/placeholder/users/#{c.user.github_username}"%>>
-          <%= link_to "", car_path(c), class: "card-link"%>
         </div>
+        <div class="card-description">
+          <div class="card-description-left">
+          <h2> <%= c.brand %> </h2>
+          <p> <%= c.model %> </p>
+          </div>
+          <div class="card-description-right">
+          <h2> £ <%= c.price %>/day </h2>
+          </div>
+        </div>
+        <%= link_to "", car_path(c), class: "card-link"%>
       </div>
     <% end %>
   </div>
