@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @cars = Car.all
+    @cars = Car.last(6)
   end
 
   def show
@@ -37,6 +37,12 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.destroy
     redirect_to cars_path
+    
+  def search
+    @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+    if @cars.empty?
+      @cars = "No results found"
+    end
   end
 
   def map
