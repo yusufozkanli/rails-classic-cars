@@ -16,10 +16,11 @@
           <h1>Vavavoom.</h1>
           <h2>Best classic cars for hire</h2>
             <div class="search-button">
-              <form id="demo-2">
-                <input type="search" placeholder="Search your dream car">
-              </form>
-            </div>
+            <%= form_tag(cars_path, method: :get, id: "demo-2") do %>
+              <%= search_field_tag :query %>
+              <%# submit_tag 'Search' %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -30,16 +31,16 @@
           <h1>Vavavoom.</h1>
           <h2>Best classic cars for hire</h2>
           <div class="search-button">
-            <form id="demo-2">
-              <input type="search" placeholder="Search your dream car">
-            </form>
+            <%= form_tag(cars_path, method: :get, id: "demo-2") do %>
+              <%= search_field_tag :query %>
+              <%# submit_tag 'Search' %>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  </div>
+</div>
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
