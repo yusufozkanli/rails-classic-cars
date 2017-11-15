@@ -31,7 +31,14 @@ class CarsController < ApplicationController
     @car = Car.find(params[:id])
     @car.update(car_params)
     redirect_to car_path(@car)
-    
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to cars_path
+  end
+
   def map
     @cars = Car.where.not(latitude: nil, longitude: nil)
 
