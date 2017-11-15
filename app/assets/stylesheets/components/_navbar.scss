@@ -89,18 +89,70 @@ h2 {
   font-size: 14px
 }
 
-.myInp {
-  width: 150px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: white;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width .4s ease-in-out;
-  transition: width .4s ease-in-out;
+input {
+  outline: none;
+}
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
 }
 
-.myInp:focus {
-  width: 60%;
+input[type=search] {
+  background: #2E2E2E url("../../../images/searchicon.png") no-repeat 9px center;
+  border: solid 1px #ccc;
+  padding: 9px 10px 9px 32px;
+  width: 55px;
+
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+}
+input[type=search]:focus {
+  width: 130px;
+  background-color: #2E2E2E;
+  border-color: #66CC75;
+
+  -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+  -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+  box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+input:-moz-placeholder {
+  color: #999;
+}
+input::-webkit-input-placeholder {
+  color: #999;
+}
+
+#demo-2 input[type=search] {
+  width: 15px;
+  padding-left: 10px;
+  color: transparent;
+  cursor: pointer;
+}
+#demo-2 input[type=search]:hover {
+  background-color: #2E2E2E;
+}
+#demo-2 input[type=search]:focus {
+  width: 130px;
+  padding-left: 32px;
+  color: #000;
+  background-color: #2E2E2E;
+  cursor: auto;
+}
+#demo-2 input:-moz-placeholder {
+  color: transparent;
+}
+#demo-2 input::-webkit-input-placeholder {
+  color: transparent;
 }
