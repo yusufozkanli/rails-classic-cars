@@ -52,6 +52,8 @@ class CarsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@cars) do |car, marker|
       marker.lat car.latitude
       marker.lng car.longitude
+      # marker.infowindow "<h1>hello</h1>"
+      marker.infowindow render_to_string(partial: "/cars/infobox", locals: { car: car })
     end
   end
 

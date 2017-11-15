@@ -2,7 +2,7 @@
   <div class="row">
     <% @cars.each do |c| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= cl_image_path c.photo, height: 300, width: 400, crop: :fill %>')">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path c.photo, height: 300, width: 400, crop: :fill %>')">
         </div>
         <div class="card-description">
           <div class="card-description-left">
