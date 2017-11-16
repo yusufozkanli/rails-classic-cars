@@ -1,18 +1,20 @@
 class RentalsController < ApplicationController
   before_action :set_car
 
-  def new
-  end
+
 
   def create
     @rental = Rental.new(rental_params)
     @rental.user_id = current_user.id
     @rental.car = @car
     if @rental.save
-      redirect_to cars_path
+      redirect_to car_rentals_confirmation_path
     else
       render 'cars/show'
     end
+  end
+
+  def confirmation
   end
 
   private
