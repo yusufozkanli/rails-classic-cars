@@ -7,6 +7,12 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+    # @cars = Car.where.not(latitude: nil, longitude: nil)
+    @rental = Rental.new
+    @hash = Gmaps4rails.build_markers(@car) do |car, marker|
+        marker.lat car.latitude
+        marker.lng car.longitude
+    end
   end
 
   def new
@@ -43,7 +49,8 @@ class CarsController < ApplicationController
     if params[:query].blank?
       redirect_to root_path
     else
-      @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+      # @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+      @cars = Car.search(params[:query])
     end
   end
 
