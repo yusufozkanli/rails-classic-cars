@@ -2,7 +2,6 @@ class RentalsController < ApplicationController
   before_action :set_car
 
   def new
-    @rental = Rental.new
   end
 
   def create
@@ -10,9 +9,9 @@ class RentalsController < ApplicationController
     @rental.user_id = current_user.id
     @rental.car = @car
     if @rental.save
-      redirect_to car_path(@car)
+      redirect_to cars_path
     else
-      render 'new'
+      render 'cars/show'
     end
   end
 
