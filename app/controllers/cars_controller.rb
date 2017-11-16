@@ -43,7 +43,8 @@ class CarsController < ApplicationController
     if params[:query].blank?
       redirect_to root_path
     else
-      @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+      # @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
+      @cars = Car.search(params[:query])
     end
   end
 
