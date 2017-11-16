@@ -71,5 +71,4 @@ class CarsController < ApplicationController
   params.require(:car).permit(:brand, :model, :year, :color, :price, :description, :address, :photo, :photo_cache)
   end
 
-
 end
