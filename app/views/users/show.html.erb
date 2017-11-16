@@ -1,18 +1,61 @@
-<h1>Hello, is this working?</h1>
-
 <p> <%= @user.email %> </p>
 
+<div class="container">
+  <h1 class="dashboardheaders"> <strong> My Cars </strong> </h1>
+    <div class="container-double2">
 
-<h1> Your Cars </h1>
 
 <% @user.cars.each do |c| %>
-<p> <%= c.brand %> </p>
-<p> <%= c.model %> </p>
-<% end  %>
+  <div class="top-bar-icons text-right">
+    <%= link_to "", edit_car_path(c), class: "fa fa-pencil" %>
+    <%= link_to "", car_path(c), method: :delete, class: "fa fa-trash"%>
+  </div>
 
-<h1> Reservations </h1>
+<div class="carte-img2">
+  <%= cl_image_tag c.photo, class: "img-show", crop: :fill %>
+</div>
 
-<% @user.rentals.each do |r| %>
-<p> <%= r.date %> </p>
-<p> <%= r.car_id %> </p>
-<% end  %>
+<div class="carte-text2">
+
+<div class="top-bar-title text-center">
+  <h4> <strong> <%= c.brand %> <%= c.model %> <%= c.year %></strong> </h4>
+</div>
+
+<ul class="list-sans-dec2">
+  <li> <strong> Brand: </strong> <%= c.brand %></li>
+  <li> <strong> Model: </strong>  <%= c.model %></li>
+  <li> <strong> Year: </strong>  <%= c.year %></li>
+  <li> <strong> Color: </strong>  <%= c.color %></li>
+  <li> <strong> £ <%= c.price %> /day </strong> </li>
+  <li> <strong> Description: </strong><%= c.description %></li>
+</ul>
+<% end %>
+
+  </div>
+</div>
+
+<h1 class="dashboardheaders"> <strong> My Reservations </strong> </h1>
+
+<div class="container2">
+  <div class="row">
+    <% @user.rentals.each do |r| %>
+      <div class="col-xs-12 col-sm-4">
+        <% url = r.car.photo %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path url, height: 300, width: 400, crop: :fill %>');">
+        </div>
+
+        <div class="card-description">
+          <div class="card-description-left">
+          <h2> <%= r.date %> </h2>
+          </div>
+          <div class="card-description-right">
+          <p> Confirmed </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+

@@ -2,10 +2,6 @@
 <div class="container">
   <div class="container-double">
 
-    <div class="top-bar-icons text-right">
-    <%= link_to "", edit_car_path(@car), class: "fa fa-pencil" %>
-    <%= link_to "", car_path(@car), method: :delete, class: "fa fa-trash"%>
-    </div>
 
     <div class="carte-img">
       <%= cl_image_tag @car.photo, class: "img-show", crop: :fill %>
