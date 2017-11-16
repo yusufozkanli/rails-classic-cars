@@ -1,5 +1,6 @@
 <div class="controller">
   <div class="confirmation-page">
-    <p>Congratulations, you succesfully booked the <%= @car.brand %> <%= @car.model %> from the ... to the ... </p>
+    <p>Congratulations, you succesfully booked the <%= @car.brand %> <%= @car.model %> from the  <%= @rental.date %> to the <%= @rental.end_date %> </p>
+    <h1> Price is <%= @price %> </h1>
   </div>
 </div>
