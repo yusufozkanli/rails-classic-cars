@@ -2,10 +2,10 @@
 
 <div class="container">
   <h1 class="dashboardheaders"> <strong> My Cars </strong> </h1>
-    <div class="container-double2">
 
 
 <% @user.cars.each do |c| %>
+<div class="col-xs-12 card-car">
   <div class="top-bar-icons text-right">
     <%= link_to "", edit_car_path(c), class: "fa fa-pencil" %>
     <%= link_to "", car_path(c), method: :delete, class: "fa fa-trash"%>
@@ -29,10 +29,9 @@
   <li> <strong> £ <%= c.price %> /day </strong> </li>
   <li> <strong> Description: </strong><%= c.description %></li>
 </ul>
-<% end %>
+</div></div>
 
-  </div>
-</div>
+<% end %>
 
 <h1 class="dashboardheaders"> <strong> My Reservations </strong> </h1>
 
