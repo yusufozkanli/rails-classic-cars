@@ -40,9 +40,10 @@ class CarsController < ApplicationController
   end
 
   def search
-    @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
-    if @cars.empty?
-      @cars = "No results found"
+    if params[:query].blank?
+      redirect_to root_path
+    else
+      @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%")
     end
   end
 
@@ -52,6 +53,8 @@ class CarsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@cars) do |car, marker|
       marker.lat car.latitude
       marker.lng car.longitude
+      # marker.infowindow "<h1>hello</h1>"
+      marker.infowindow render_to_string(partial: "/cars/infobox", locals: { car: car })
     end
   end
 

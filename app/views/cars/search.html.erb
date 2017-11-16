@@ -1,3 +1,7 @@
 <div class="container">
-  <%= render 'shared/card' %>
+    <% if @cars.empty? %>
+    No cars found
+    <% else %>
+    <%= render 'shared/card' %>
+    <% end %>
 </div>

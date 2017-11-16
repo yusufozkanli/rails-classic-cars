@@ -3,3 +3,7 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+.full-screen {
+  min-height: calc(100vh - 190px);
+}

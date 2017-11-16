@@ -10,7 +10,6 @@ gem 'redis'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
-gem 'searchkick', '~> 2.3'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
