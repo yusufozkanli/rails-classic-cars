@@ -7,7 +7,12 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+    # @cars = Car.where.not(latitude: nil, longitude: nil)
     @rental = Rental.new
+    @hash = Gmaps4rails.build_markers(@car) do |car, marker|
+        marker.lat car.latitude
+        marker.lng car.longitude
+    end
   end
 
   def new
