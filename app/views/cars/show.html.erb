@@ -26,16 +26,12 @@
         <li> <strong> Description: </strong><%= @car.description %></li>
       </ul>
 
-      <%= link_to "Book This Car", new_car_rental_path(@car), class: "btn btn-danger" %>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3">
-            <%= simple_form_for [@car, @rental] do |f| %>
-              <%= f.input :date %>
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+          <%= simple_form_for [@car, @rental] do |f| %>
+            <%= f.input :date %>
               <%= f.submit "Book", class: "btn btn-primary" %>
-            <% end %>
-         </div>
+          <% end %>
         </div>
       </div>
 
