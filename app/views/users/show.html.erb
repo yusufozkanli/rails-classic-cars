@@ -1,6 +1,19 @@
-<p> <%= @user.email %> </p>
-
 <div class="container">
+
+  <% if @user.name == nil %>
+    <h2> Welcome <%= @user.email %> </h2>
+  <% else %>
+    <h2> Welcome <%= @user.name %> </h2>
+  <% end %>
+
+<div class="user-info">
+  <p> Name : <%= @user.name %> </p>
+  <p> Email : <%= @user.email %> </p>
+  <p> Phone : <%= @user.phone %> </p>
+  <p> GitHub Username : <%= @user.github_username %> </p>
+  <%= link_to "Edit", edit_user_path, class: "btn btn-primary" %>
+</div>
+
   <h1 class="dashboardheaders"> <strong> My Cars </strong> </h1>
 
 
@@ -45,10 +58,11 @@
 
         <div class="card-description">
           <div class="card-description-left">
-          <h2> <%= r.date %> </h2>
+          <h2> <%= r.date %> - <%= r.end_date %> </h2>
           </div>
           <div class="card-description-right">
           <p> Confirmed </p>
+          <p> £ <%= r.price %> </p>
           </div>
         </div>
       </div>
