@@ -52,24 +52,25 @@
 
 <h1 class="dashboardheaders1"> <strong> My Reservations </strong> </h1>
 
-<div class="container2">
-  <div class="row">
-    <% @user.rentals.each do |r| %>
-      <div class="col-xs-12 col-sm-4 card-car2">
-        <% url = r.car.photo %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path url, height: 300, width: 400, crop: :fill %>');">
-        </div>
+  <div class="container2">
+    <div class="row">
+      <% @user.rentals.each do |r| %>
+        <div class="col-xs-12 col-sm-4 card-car2">
+          <% url = r.car.photo %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path url, height: 300, width: 400, crop: :fill %>');">
+          </div>
 
-        <div class="card-description">
-          <div class="card-description-left">
-          <h2> <%= r.date %> - <%= r.end_date %> </h2>
-          </div>
-          <div class="card-description-right">
-          <p> Confirmed </p>
-          <p> £ <%= r.price %> </p>
+          <div class="card-description">
+            <div class="card-description-left">
+            <h2> <%= r.date %> - <%= r.end_date %> </h2>
+            </div>
+            <div class="card-description-right">
+            <p> Confirmed </p>
+            <p> £ <%= r.price %> </p>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

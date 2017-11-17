@@ -1,0 +1,55 @@
+.carte-img2 {
+  width: 25%;
+  height: 100%;
+}
+
+.carte-text2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin-left: 10px;
+  bottom: 30px;
+  font-size: 70%
+}
+
+h4 {
+  font-size: 100%
+}
+
+.dashboardheaders {
+  font-size: 100%;
+  position: relative;
+  bottom: 4px;
+}
+
+.dashboardheaders1 {
+  font-size: 100%;
+  line-height: 60px;
+}
+
+.card-car2 {
+  position: relative;
+  bottom: 20px;
+}
+
+.user-info {
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-info-left {
+  width: 50%;
+  text-align: left;
+  position: relative;
+}
+
+.user-info-left a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+}
+
+.user-info-right {
+  min-width: 40%;
+}

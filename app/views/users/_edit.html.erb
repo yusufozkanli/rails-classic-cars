@@ -1,15 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6 col-xs-offset-3 text-center">
-      <h1>Update User</h1>
-      <%= simple_form_for [@user] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :email %>
-        <%= f.input :phone %>
-        <%= f.input :github_username %>
-        <%= f.submit "Update", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-</div>
+
+<%= simple_form_for [@user] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :phone %>
+  <%= f.input :github_username %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>
+
+
+
 

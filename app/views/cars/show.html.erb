@@ -1,17 +1,13 @@
 
 <div class="container">
-  <div class="container-double">
 
+  <div class="container-double">
 
     <div class="carte-img">
       <%= cl_image_tag @car.photo, class: "img-show", crop: :fill %>
     </div>
 
-    <div class="carte-text">
-
-      <div class="top-bar-title text-center">
-      <h4> <strong> <%= @car.brand %> <%= @car.model %> <%= @car.year %></strong> </h4>
-      </div>
+     <div class="carte-text">
 
       <ul class="list-sans-dec">
         <li> <strong> Brand: </strong> <%= @car.brand %></li>
@@ -19,19 +15,19 @@
         <li> <strong> Year: </strong>  <%= @car.year %></li>
         <li> <strong> Color: </strong>  <%= @car.color %></li>
         <li> <strong> £ <%= @car.price %> /day </strong> </li>
-        <li> <strong> Description: </strong><%= @car.description %></li>
       </ul>
 
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
-          <%= simple_form_for [@car, @rental] do |f| %>
+      <div class="form-area">
+          <h2>Book this car now.</h2>
+          <%= simple_form_for [@car, @rental], :html=> { class: 'simpleform' } do |f| %>
             <%= f.input :date %>
             <%= f.input :end_date %>
             <%= f.submit "Book", class: "btn btn-primary" %>
           <% end %>
-        </div>
       </div>
+
     </div>
+
   </div>
 
 <% if @car.longitude != nil && @car.latitude != nil %>
