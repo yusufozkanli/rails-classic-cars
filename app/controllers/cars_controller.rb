@@ -13,6 +13,7 @@ class CarsController < ApplicationController
         marker.lat car.latitude
         marker.lng car.longitude
     end
+    @review = Review.new
   end
 
   def new

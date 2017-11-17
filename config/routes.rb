@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/cars/search', to: 'cars#search'
 
   resources :cars do
+    resources :reviews, only: :create
     resources :rentals, only: [ :new, :create ]
     get '/rentals/confirmation', to: 'rentals#confirmation'
   end
