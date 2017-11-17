@@ -6,20 +6,21 @@ class RentalsController < ApplicationController
     @rental.user_id = current_user.id
     @rental.car = @car
     if @rental.save
-      redirect_to car_rentals_confirmation_path
+      redirect_to car_path(@car)
+      flash[:notice] = "Successfully booked between #{@rental.end_date} and #{@rental.date}"
     else
       render 'cars/show'
     end
   end
 
-  def confirmation
-    @rental = @car.rentals.last
-    if (@rental.end_date - @rental.date) == 0
-      @price = @car.price
-    else
-      @price = @car.price * (@rental.end_date - @rental.date)
-    end
-  end
+  # def confirmation
+  #   @rental = @car.rentals.last
+  #   if (@rental.end_date - @rental.date) == 0
+  #     @price = @car.price
+  #   else
+  #     @price = @car.price * (@rental.end_date - @rental.date)
+  #   end
+  # end
 
   private
 
