@@ -7,11 +7,15 @@
   <% end %>
 
 <div class="user-info">
+  <div class="user-info-left">
   <p> Name : <%= @user.name %> </p>
   <p> Email : <%= @user.email %> </p>
   <p> Phone : <%= @user.phone %> </p>
   <p> GitHub Username : <%= @user.github_username %> </p>
-  <%= link_to "Edit", edit_user_path, class: "btn btn-primary" %>
+  <%= link_to "Edit", edit_user_path, class: "btn btn-primary", remote: true %>
+  </div>
+  <div id="user-info-right">
+  </div>
 </div>
 
   <h1 class="dashboardheaders"> <strong> My Cars </strong> </h1>

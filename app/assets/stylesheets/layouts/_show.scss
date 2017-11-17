@@ -111,6 +111,12 @@ h4 {
   right: -129px;
 }
 
+.user-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+
 .dashboardheaders1 {
   font-size: 100%;
   line-height: 60px;
@@ -120,3 +126,4 @@ h4 {
   position: relative;
   bottom: 20px;
 }
+
