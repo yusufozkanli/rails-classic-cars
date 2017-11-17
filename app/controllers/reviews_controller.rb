@@ -5,10 +5,15 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.car = @car
     if @review.save
-      redirect_to car_path(@car)
+      respond_to do |format|
+        format.html { redirect_to car_path(@car) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      redirect_to car_path(@car)
-      # render 'cars/show'
+      respond_to do |format|
+        format.html { render 'cars/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
