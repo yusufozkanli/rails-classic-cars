@@ -1,6 +1,23 @@
-<p> <%= @user.email %> </p>
-
 <div class="container">
+
+  <% if @user.name == nil %>
+    <h2> Welcome <%= @user.email %> </h2>
+  <% else %>
+    <h2> Welcome <%= @user.name %> </h2>
+  <% end %>
+
+<div class="user-info">
+  <div class="user-info-left">
+  <p> Name : <%= @user.name %> </p>
+  <p> Email : <%= @user.email %> </p>
+  <p> Phone : <%= @user.phone %> </p>
+  <p> GitHub Username : <%= @user.github_username %> </p>
+  <%= link_to "Edit", edit_user_path, class: "btn btn-primary", remote: true %>
+  </div>
+  <div id="user-info-right">
+  </div>
+</div>
+
   <h1 class="dashboardheaders"> <strong> My Cars </strong> </h1>
 
 
@@ -33,22 +50,23 @@
 
 <% end %>
 
-<h1 class="dashboardheaders"> <strong> My Reservations </strong> </h1>
+<h1 class="dashboardheaders1"> <strong> My Reservations </strong> </h1>
 
 <div class="container2">
   <div class="row">
     <% @user.rentals.each do |r| %>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4 card-car2">
         <% url = r.car.photo %>
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path url, height: 300, width: 400, crop: :fill %>');">
         </div>
 
         <div class="card-description">
           <div class="card-description-left">
-          <h2> <%= r.date %> </h2>
+          <h2> <%= r.date %> - <%= r.end_date %> </h2>
           </div>
           <div class="card-description-right">
           <p> Confirmed </p>
+          <p> £ <%= r.price %> </p>
           </div>
         </div>
       </div>

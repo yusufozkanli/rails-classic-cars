@@ -5,9 +5,10 @@ class RentalsController < ApplicationController
     @rental = Rental.new(rental_params)
     @rental.user_id = current_user.id
     @rental.car = @car
+    @rental.price = @car.price * (@rental.end_date - @rental.date)
     if @rental.save
       redirect_to car_path(@car)
-      flash[:notice] = "Successfully booked between #{@rental.end_date} and #{@rental.date}"
+      flash[:notice] = "Successfully booked between #{@rental.date} and #{@rental.end_date}"
     else
       render 'cars/show'
     end
