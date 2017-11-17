@@ -4,6 +4,7 @@ class Car < ApplicationRecord
   belongs_to :user
 
   has_many :rentals, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :brand, :model, :year, :color, :price, presence: true
 
