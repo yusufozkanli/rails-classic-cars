@@ -1,12 +1,14 @@
 class ReviewsController < ApplicationController
   def create
     @car = Car.find(params[:car_id])
+    @rental = Rental.new
     @review = Review.new(review_params)
     @review.car = @car
     if @review.save
       redirect_to car_path(@car)
     else
-      render 'cars/show'
+      redirect_to car_path(@car)
+      # render 'cars/show'
     end
   end
 
