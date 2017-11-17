@@ -1,0 +1,24 @@
+<h1 class="dashboardheaders1"> <strong> My Reservations </strong> </h1>
+
+  <div class="container2">
+    <div class="row">
+      <% @user.rentals.each do |r| %>
+        <div class="col-xs-12 col-sm-4 card-car2">
+          <% url = r.car.photo %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path url, height: 300, width: 400, crop: :fill %>');">
+          </div>
+
+          <div class="card-description">
+            <div class="card-description-left">
+            <p> From: <%= r.date %> </p>
+            <p> To: <%= r.end_date %> </p>
+            </div>
+            <div class="card-description-right">
+            <p> Reservation Confirmed </p>
+            <p> £ <%= r.price %> </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

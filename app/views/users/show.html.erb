@@ -1,13 +1,12 @@
 <div class="container">
 
+<div class="user-info">
+  <div class="user-info-left">
   <% if @user.name == nil %>
     <h2> Welcome <%= @user.email %> </h2>
   <% else %>
     <h2> Welcome <%= @user.name %> </h2>
   <% end %>
-
-<div class="user-info">
-  <div class="user-info-left">
   <p> Name : <%= @user.name %> </p>
   <p> Email : <%= @user.email %> </p>
   <p> Phone : <%= @user.phone %> </p>
@@ -18,59 +17,12 @@
   </div>
 </div>
 
-  <h1 class="dashboardheaders"> <strong> My Cars </strong> </h1>
+<% if @user.cars.count >= 1 %>
+  <%= render 'mycars' %>
+  <% end %>
 
+<% if @user.rentals.count >= 1 %>
+  <%= render 'myrentals' %>
+  <% end %>
 
-<% @user.cars.each do |c| %>
-<div class="col-xs-12 card-car">
-  <div class="top-bar-icons text-right">
-    <%= link_to "", edit_car_path(c), class: "fa fa-pencil" %>
-    <%= link_to "", car_path(c), method: :delete, class: "fa fa-trash"%>
-  </div>
-
-<div class="carte-img2">
-  <%= cl_image_tag c.photo, class: "img-show", crop: :fill %>
-</div>
-
-<div class="carte-text2">
-
-<div class="top-bar-title text-center">
-  <h4> <strong> <%= c.brand %> <%= c.model %> <%= c.year %></strong> </h4>
-</div>
-
-<ul class="list-sans-dec2">
-  <li> <strong> Brand: </strong> <%= c.brand %></li>
-  <li> <strong> Model: </strong>  <%= c.model %></li>
-  <li> <strong> Year: </strong>  <%= c.year %></li>
-  <li> <strong> Color: </strong>  <%= c.color %></li>
-  <li> <strong> £ <%= c.price %> /day </strong> </li>
-  <li> <strong> Description: </strong><%= c.description %></li>
-</ul>
-</div></div>
-
-<% end %>
-
-<h1 class="dashboardheaders1"> <strong> My Reservations </strong> </h1>
-
-  <div class="container2">
-    <div class="row">
-      <% @user.rentals.each do |r| %>
-        <div class="col-xs-12 col-sm-4 card-car2">
-          <% url = r.car.photo %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('<%= cl_image_path url, height: 300, width: 400, crop: :fill %>');">
-          </div>
-
-          <div class="card-description">
-            <div class="card-description-left">
-            <h2> <%= r.date %> - <%= r.end_date %> </h2>
-            </div>
-            <div class="card-description-right">
-            <p> Confirmed </p>
-            <p> £ <%= r.price %> </p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
 </div>

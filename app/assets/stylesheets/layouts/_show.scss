@@ -100,17 +100,19 @@ h4 {
   bottom: 4px;
 }
 
-.form-group {
-  // position: relative;
-  // right: 126px;
-}
-
 
 .user-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
+.user-info-right {
+  width: 40%;
+}
+
+.user-info-left {
+  width: 40%;
+}
 
 .dashboardheaders1 {
   font-size: 100%;
@@ -120,5 +122,23 @@ h4 {
 .card-car2 {
   position: relative;
   bottom: 20px;
+}
+
+label {
+  font-size: 12px;
+}
+
+input {
+  padding: 0px;
+}
+
+.card-description-right p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.card-description-left p {
+  padding: 0px;
+  margin: 0px;
 }
 

@@ -1,0 +1,34 @@
+<div class="mycars">
+
+    <h1 class="dashboardheaders"> <strong> My Cars </strong> </h1>
+
+    <% @user.cars.each do |c| %>
+    <div class="col-xs-12 card-car">
+    <div class="top-bar-icons text-right">
+      <%= link_to "", edit_car_path(c), class: "fa fa-pencil" %>
+      <%= link_to "", car_path(c), method: :delete, class: "fa fa-trash"%>
+    </div>
+
+    <div class="carte-img2">
+    <%= cl_image_tag c.photo, class: "img-show", crop: :fill %>
+    </div>
+
+    <div class="carte-text2">
+
+    <div class="top-bar-title text-center">
+    <h4> <strong> <%= c.brand %> <%= c.model %> <%= c.year %></strong> </h4>
+    </div>
+
+    <ul class="list-sans-dec2">
+    <li> <strong> Brand: </strong> <%= c.brand %></li>
+    <li> <strong> Model: </strong>  <%= c.model %></li>
+    <li> <strong> Year: </strong>  <%= c.year %></li>
+    <li> <strong> Color: </strong>  <%= c.color %></li>
+    <li> <strong> £ <%= c.price %> /day </strong> </li>
+    <li> <strong> Description: </strong><%= c.description %></li>
+    </ul>
+    </div></div>
+
+    <% end %>
+
+</div>
