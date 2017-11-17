@@ -58,6 +58,20 @@
   <% end %>
 
   <h3>Reviews</h3>
+  <h4>
+    <%= pluralize @car.reviews.size, "review" %> <!-- what is the "review" ? -->
+  </h4>
+
+  <div id="reviews">
+    <% if @car.reviews.blank? %>
+      Be the first to leave a review for <%= @car.brand %> <%= @car.model %>
+    <% else %>
+      <% @car.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
 
 
