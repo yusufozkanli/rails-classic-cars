@@ -5,7 +5,7 @@ class Car < ApplicationRecord
 
   has_many :rentals, dependent: :destroy
 
-  validates :brand, :model, :year, :color, :price, presence: true
+  validates :brand, :model, :year, :color, :price, :address, :photo, presence: true
 
   mount_uploader :photo, PhotoUploader
   geocoded_by :address

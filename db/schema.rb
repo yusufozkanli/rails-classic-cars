@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115110258) do
+ActiveRecord::Schema.define(version: 20171117110633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,19 @@ ActiveRecord::Schema.define(version: 20171115110258) do
     t.bigint "car_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "end_date"
+    t.integer "price"
     t.index ["car_id"], name: "index_rentals_on_car_id"
     t.index ["user_id"], name: "index_rentals_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "content"
+    t.bigint "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_reviews_on_car_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,6 +68,8 @@ ActiveRecord::Schema.define(version: 20171115110258) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "github_username"
+    t.string "name"
+    t.integer "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -64,4 +77,5 @@ ActiveRecord::Schema.define(version: 20171115110258) do
   add_foreign_key "cars", "users"
   add_foreign_key "rentals", "cars"
   add_foreign_key "rentals", "users"
+  add_foreign_key "reviews", "cars"
 end
