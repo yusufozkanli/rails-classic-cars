@@ -5,8 +5,9 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: black;
+  color: white;
   background-color: red;
+  border: none !important;
 }
 .alert-info {
   background: $green;
