@@ -1,8 +1,7 @@
 
 <div class="container">
+
   <div class="container-double">
-
-
     <div class="carte-img">
       <%= cl_image_tag @car.photo, class: "img-show", crop: :fill %>
     </div>
@@ -22,16 +21,16 @@
         <li> <strong> Description: </strong><%= @car.description %></li>
       </ul>
 
-      <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
-          <%= simple_form_for [@car, @rental] do |f| %>
-            <%= f.input :date %>
-            <%= f.input :end_date %>
-            <%= f.submit "Book", class: "btn sho btn-primary" %>
-          <% end %>
-        </div>
-      </div>
     </div>
+
+    <div class="cart-form">
+        <%= simple_form_for [@car, @rental] do |f| %>
+          <%= f.input :date %>
+          <%= f.input :end_date %>
+          <%= f.submit "Book", class: "btn sho btn-primary" %>
+        <% end %>
+    </div>
+
   </div>
 
 <% if @car.longitude != nil && @car.latitude != nil %>
