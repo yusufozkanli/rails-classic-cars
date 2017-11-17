@@ -1,4 +1,4 @@
-<%= simple_form_for([ car, review ]) do |form| %>
+<%= simple_form_for([ car, review ], remote: true) do |form| %>
   <%= form.error_notification %>
   <%= form.input :content, as: :text %>
   <%= form.button :submit %>
